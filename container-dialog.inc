@@ -445,11 +445,10 @@ hook OnPlayerOpenInventory(playerid) {
 hook OnPlayerSelectExtraItem(playerid, item) {
 	if(IsValidContainer(cnt_CurrentContainer[playerid])) {
 		if(item == cnt_InventoryContainerItem[playerid]) {
-			ClosePlayerInventory(playerid);
 			DisplayContainerInventory(playerid, cnt_CurrentContainer[playerid]);
-			return 0;
+			return 1;
 		}
 	}
-
+	
 	return 0;
 }
